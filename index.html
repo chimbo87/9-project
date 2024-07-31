@@ -13,12 +13,12 @@
           <h4>9.</h4>
         </div>
         <div>
-          <div class="nav-menu-bar">
+          <div class="nav-menu-bar" id="menu-toggle">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <ul class="nav-menu-pages">
+          <ul class="nav-menu-pages" id="nav-menu">
             <li>Section 01</li>
             <li>Section 02</li>
             <li>Section 03</li>
@@ -40,10 +40,231 @@
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book. It has survived not
             only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. 
+            remaining essentially unchanged.
           </p>
         </div>
       </div>
     </section>
+
+    <section>
+      <div class="about-section">
+        <div class="about-cardA"></div>
+        <div class="about-cardB">
+          <h2>Heading</h2>
+          <h1>Title</h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+          </p>
+          <button>LINK</button>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <div class="about-cardB">
+          <h2>Heading</h2>
+          <h1>Title</h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+          </p>
+          <button>LINK</button>
+        </div>
+
+        <div class="about-cardA"></div>
+      </div>
+    </section>
+
+    <!-- <section>
+      <div class="select-card-container">
+        <select id="itemSelect">
+          <option value="" selected disabled>Select</option>
+          <option value="item1">Item 1</option>
+          <option value="item2">Item 2</option>
+          <option value="item3">Item 3</option>
+          <option value="item4">Item 4</option>
+        </select>
+
+        <div class="card-container">
+          <div class="card">
+            <h2>Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod.
+            </p>
+          </div>
+          <div class="card">
+            <h2>Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod.
+            </p>
+          </div>
+          <div class="card">
+            <h2>Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod.
+            </p>
+          </div>
+          <div class="card">
+            <h2>Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod.
+            </p>
+          </div>
+          <div class="card">
+            <h2>Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="modal-content-text">
+            <h2 id="modalTitle">Modal Title</h2>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section>
+      <div class="service">
+        <div class="service-card">
+          <div>
+            <h1>Title</h1>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+          </div>
+          <button>LINK</button>
+        </div>
+        <div class="service-card">
+          <div>
+            <h1>Title</h1>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.
+            </p>
+          </div>
+          <button>LINK</button>
+        </div>
+        <div class="service-card">
+          <div>
+            <h1>Title</h1>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s,
+            </p>
+          </div>
+          <button>LINK</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card-container">
+      <div class="card-container-wrap">
+        <div class="card" id="card1"></div>
+        <div class="card" id="card2"></div>
+        <div class="card" id="card3"></div>
+        <div class="card" id="card4"></div>
+        <div class="card" id="card5"></div>
+        <div class="card" id="card6"></div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const navMenu = document.getElementById("nav-menu");
+
+        menuToggle.addEventListener("click", function () {
+          menuToggle.classList.toggle("active");
+          navMenu.classList.toggle("show");
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+          if (
+            !menuToggle.contains(event.target) &&
+            !navMenu.contains(event.target)
+          ) {
+            menuToggle.classList.remove("active");
+            navMenu.classList.remove("show");
+          }
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const select = document.getElementById("itemSelect");
+        const modal = document.getElementById("modal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalContent = document.getElementById("modalContent");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        select.addEventListener("change", function () {
+          const selectedValue = this.value;
+          if (selectedValue) {
+            modalTitle.textContent = selectedValue;
+
+            modal.style.display = "block";
+          }
+        });
+
+        closeBtn.onclick = function () {
+          modal.style.display = "none";
+          select.selectedIndex = 0;
+        };
+
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+            select.selectedIndex = 0;
+          }
+        };
+      });
+
+      // document.addEventListener("DOMContentLoaded", () => {
+      //   const cards = document.querySelectorAll(".card");
+
+      //   cards.forEach((card) => {
+      //     card.addEventListener("mouseover", () => {
+      //       cards.forEach((c) => {
+      //         if (c !== card) {
+      //           c.style.opacity = "0.7";
+      //         }
+      //       });
+      //     });
+
+      //     card.addEventListener("mouseout", () => {
+      //       cards.forEach((c) => {
+      //         c.style.opacity = "1";
+      //       });
+      //     });
+      //   });
+      // });
+    </script>
   </body>
 </html>
